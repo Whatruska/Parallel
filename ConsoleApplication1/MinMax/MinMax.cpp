@@ -1,9 +1,12 @@
-﻿#include <iostream>
+﻿/* Подключаем вывод, многопоточку и библиотеку работы со временем */
+#include <iostream>
 #include <omp.h>
 #include <time.h>
 
 const int ARR_SIZE = 10;
 const int ARR_MAX_VAL = 100;
+
+/* Делаем метод распечатки массива */
 void print_arr (int arr[])
 {
 	for (int i = 0; i < ARR_SIZE; i++)
@@ -26,7 +29,10 @@ void print_arr (int arr[])
 
 int main()
 {
-
+	/* 
+		Задаем рандому сид связанный со временем
+		Иначе - будут генерироваться одинаковые данные
+	*/
 	srand(time(NULL));
 
 	int a[ARR_SIZE];
@@ -40,9 +46,15 @@ int main()
 	int min = INT_MAX;
 	int max = INT_MIN;
 
+	/*
+		Создаем 2 потока и даем им один и даем им один и тот же код
+	*/
 #pragma omp parallel num_threads(2)
 	{
 		int num = omp_get_thread_num();
+		/*
+			Если работаем с первым потоком - ищем минимум
+		*/
 		if (num == 0)
 		{
 			for (int i = 0; i < ARR_SIZE; i++)
@@ -54,6 +66,9 @@ int main()
 				}
 			}
 		}
+		/*
+			Если работаем со вторым потоком - ищем максимум
+		*/
 		else
 		{
 			for (int i = 0; i < ARR_SIZE; i++)
