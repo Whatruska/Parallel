@@ -1,0 +1,17 @@
+﻿  MatrixAndVector.cpp
+C:\Users\vitdu\source\repos\OMP_Iterations\MatrixAndVector\MatrixAndVector.cpp(14,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\vitdu\source\repos\OMP_Iterations\MatrixAndVector\MatrixAndVector.cpp(44,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "_Rep"
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\vitdu\source\repos\OMP_Iterations\MatrixAndVector\MatrixAndVector.cpp(44,12): message : рекомендуется использовать "%lld" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\MatrixAndVector\MatrixAndVector.cpp(44,12): message : рекомендуется использовать "%I64d" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\MatrixAndVector\MatrixAndVector.cpp(60,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "_Rep"
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\vitdu\source\repos\OMP_Iterations\MatrixAndVector\MatrixAndVector.cpp(60,12): message : рекомендуется использовать "%lld" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\MatrixAndVector\MatrixAndVector.cpp(60,12): message : рекомендуется использовать "%I64d" в строке форматирования
+  MatrixAndVector.vcxproj -> C:\Users\vitdu\source\repos\OMP_Iterations\Debug\MatrixAndVector.exe

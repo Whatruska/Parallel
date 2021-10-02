@@ -1,0 +1,45 @@
+﻿  Schedules.cpp
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(31,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(50,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "_Rep"
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(50,12): message : рекомендуется использовать "%lld" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(50,12): message : рекомендуется использовать "%I64d" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(65,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "2" имеет тип "_Rep"
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(65,12): message : рекомендуется использовать "%lld" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(65,12): message : рекомендуется использовать "%I64d" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(80,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "_Rep"
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(80,12): message : рекомендуется использовать "%lld" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(80,12): message : рекомендуется использовать "%I64d" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(95,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "2" имеет тип "_Rep"
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(95,12): message : рекомендуется использовать "%lld" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(95,12): message : рекомендуется использовать "%I64d" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(110,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "_Rep"
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(110,12): message : рекомендуется использовать "%lld" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(110,12): message : рекомендуется использовать "%I64d" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(125,12): warning C4477: "printf": в строке форматирования "%d" требуется аргумент типа "int", но вариативный аргумент "1" имеет тип "_Rep"
+          with
+          [
+              _Rep=__int64
+          ]
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(125,12): message : рекомендуется использовать "%lld" в строке форматирования
+C:\Users\vitdu\source\repos\OMP_Iterations\Schedules\Schedules.cpp(125,12): message : рекомендуется использовать "%I64d" в строке форматирования
+  Schedules.vcxproj -> C:\Users\vitdu\source\repos\OMP_Iterations\Debug\Schedules.exe

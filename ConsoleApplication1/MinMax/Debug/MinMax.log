@@ -1,0 +1,3 @@
+﻿  MinMax.cpp
+C:\Users\vitdu\source\repos\ConsoleApplication1\MinMax\MinMax.cpp(30,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  MinMax.vcxproj -> C:\Users\vitdu\source\repos\ConsoleApplication1\Debug\MinMax.exe

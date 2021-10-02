@@ -1,0 +1,3 @@
+﻿  Sections.cpp
+C:\Users\vitdu\source\repos\ConsoleApplication1\Sections\Sections.cpp(36,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Sections.vcxproj -> C:\Users\vitdu\source\repos\ConsoleApplication1\Debug\Sections.exe

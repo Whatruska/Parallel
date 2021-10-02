@@ -1,0 +1,3 @@
+﻿  ThreeArrays.cpp
+C:\Users\vitdu\source\repos\OMP_Iterations\ThreeArrays\ThreeArrays.cpp(10,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  ThreeArrays.vcxproj -> C:\Users\vitdu\source\repos\OMP_Iterations\Debug\ThreeArrays.exe

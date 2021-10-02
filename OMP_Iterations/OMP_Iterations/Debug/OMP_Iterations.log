@@ -1,0 +1,3 @@
+﻿  for_and_reduction.cpp
+C:\Users\vitdu\source\repos\OMP_Iterations\OMP_Iterations\for_and_reduction.cpp(14,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  OMP_Iterations.vcxproj -> C:\Users\vitdu\source\repos\OMP_Iterations\Debug\For and reduction.exe

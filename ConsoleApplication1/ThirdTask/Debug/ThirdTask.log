@@ -1,0 +1,4 @@
+﻿  ThirdTask.cpp
+C:\Users\vitdu\source\repos\ConsoleApplication1\ThirdTask\ThirdTask.cpp(13): warning C4101: a: неиспользованная локальная переменная
+C:\Users\vitdu\source\repos\ConsoleApplication1\ThirdTask\ThirdTask.cpp(13): warning C4101: b: неиспользованная локальная переменная
+  ThirdTask.vcxproj -> C:\Users\vitdu\source\repos\ConsoleApplication1\Debug\ThirdTask.exe
