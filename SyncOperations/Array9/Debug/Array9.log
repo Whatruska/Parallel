@@ -1,0 +1,3 @@
+﻿  Array9.cpp
+C:\Users\vitdu\source\repos\SyncOperations\Array9\Array9.cpp(30,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Array9.vcxproj -> C:\Users\vitdu\source\repos\SyncOperations\Debug\Array9.exe

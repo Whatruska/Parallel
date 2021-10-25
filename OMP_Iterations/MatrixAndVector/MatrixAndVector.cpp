@@ -5,7 +5,7 @@
 
 using namespace std::chrono;
 
-const int VECTOR_LENGTH = 1500;
+const int VECTOR_LENGTH = 2000;
 const int MATRIX_LENGTH = 100;
 const int ARR_MAX_VAL = 10;
 
@@ -48,7 +48,6 @@ int main()
     for (int i = 0; i < MATRIX_LENGTH; i++)
     {
         int sum = 0;
-#pragma omp parallel for schedule(dynamic, 375)
         for (int j = 0; j < VECTOR_LENGTH; j++)
         {
             sum += vector[j] * matrix[i][j];

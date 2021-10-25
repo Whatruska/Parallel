@@ -1,0 +1,8 @@
+﻿  ParallelIf.cpp
+C:\Users\vitdu\source\repos\ConsoleApplication1\ParallelIf\ParallelIf.cpp(9,9): warning C4068: неизвестная прагма "parallel"
+C:\Users\vitdu\source\repos\ConsoleApplication1\ParallelIf\ParallelIf.cpp(16,9): warning C4068: неизвестная прагма "parallel"
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 4 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  ParallelIf.vcxproj -> C:\Users\vitdu\source\repos\ConsoleApplication1\Release\ParallelIf.exe

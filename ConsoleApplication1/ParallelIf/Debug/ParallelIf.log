@@ -1,0 +1,2 @@
+﻿  ParallelIf.cpp
+C:\Users\vitdu\source\repos\ConsoleApplication1\ParallelIf\ParallelIf.cpp(27,11): error C3001: cancel: требуется имя директивы OpenMP

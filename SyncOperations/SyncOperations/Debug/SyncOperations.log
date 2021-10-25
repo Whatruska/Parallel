@@ -1,0 +1,3 @@
+﻿  SyncOperations.cpp
+C:\Users\vitdu\source\repos\SyncOperations\SyncOperations\SyncOperations.cpp(34,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  SyncOperations.vcxproj -> C:\Users\vitdu\source\repos\SyncOperations\Debug\Matrix.exe
