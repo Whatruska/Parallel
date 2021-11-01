@@ -1,4 +1,3 @@
-﻿  3.cpp
-C:\Users\vitdu\source\repos\MPI\MPI\3.cpp(18,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-C:\Users\vitdu\source\repos\MPI\MPI\3.cpp(6,16): warning C4101: st: неиспользованная локальная переменная
+﻿  4.cpp
+C:\Users\vitdu\source\repos\MPI\MPI\4.cpp(26,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   MPI.vcxproj -> C:\Users\vitdu\source\repos\MPI\Debug\MPI.exe
