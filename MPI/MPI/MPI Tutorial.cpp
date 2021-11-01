@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <mpi.h>
+#include "Header.h"
 
 int mpi()
 {
@@ -98,11 +99,4 @@ int mpi()
     MPI_Finalize();
 
     return EXIT_SUCCESS;
-}
-
-int main()
-{
-    mpi();
-
-    return 0;
 }

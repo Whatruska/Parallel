@@ -24,6 +24,7 @@
     <ProjectGuid>{43dffc5e-dbe1-49d4-9d0b-4c20d60a4519}</ProjectGuid>
     <RootNamespace>MPI</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>MPI</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -159,7 +160,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MPI.cpp" />
+    <ClCompile Include="1.cpp" />
+    <ClCompile Include="2.cpp" />
+    <ClCompile Include="3.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MPI Tutorial.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
