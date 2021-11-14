@@ -2,7 +2,7 @@
 
 int main()
 {
-    fifth_task();
+    tenth_task();
 
     return 0;
 }
