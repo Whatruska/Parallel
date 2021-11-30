@@ -2,6 +2,7 @@
 #include <mpi.h>
 #include <iostream>
 #include <chrono>
+#include <cmath>
 
 using namespace std;
 
@@ -26,62 +27,63 @@ void tenth_task() {
 		arr[i] = rand() % MAX_VAL;
 	}
 
-	auto start = std::chrono::system_clock::now();
-	if (rank = 0) {
+	auto start = MPI_Wtime();
+	if (rank == 0) {
 		int buf[N];
-		for (int i = 1; i < N; i++) {
-			MPI_Recv(&buf, N, MPI_INT, i, 0, MPI_COMM_WORLD, &status);
-		}
+		MPI_Recv(&buf, N, MPI_INT, 1, 0, MPI_COMM_WORLD, &status);
 	}
 	else {
 		MPI_Send(&arr, N, MPI_INT, 0, 0, MPI_COMM_WORLD);
 	}
-	MPI_Barrier(MPI_COMM_WORLD);
-	auto end = std::chrono::system_clock::now();
-	auto t = std::chrono::duration_cast<std::chrono::milliseconds>(start - end).count();
-	printf("Send: %d", t);
 
-	start = std::chrono::system_clock::now();
-	if (rank = 0) {
+	auto end = MPI_Wtime();
+	auto t = end - start;
+	if (rank == 0) {
+		printf("Send: %f\n", abs(t));
+	}
+
+	start = MPI_Wtime();
+	if (rank == 0) {
 		int buf[N];
-		for (int i = 1; i < N; i++) {
-			MPI_Recv(buf, N, MPI_INT, i, 0, MPI_COMM_WORLD, &status);
-		}
+		MPI_Recv(&buf, N, MPI_INT, 1, 0, MPI_COMM_WORLD, &status);
 	}
 	else {
-		MPI_Ssend(arr, N, MPI_INT, 0, 0, MPI_COMM_WORLD);
+		MPI_Ssend(&arr, N, MPI_INT, 0, 0, MPI_COMM_WORLD);
 	}
-	end = std::chrono::system_clock::now();
-	t = std::chrono::duration_cast<std::chrono::milliseconds>(start - end).count();
-	printf("Ssend: %d", t);
+	end = MPI_Wtime();
+	t = end - start;
+	if (rank == 0) {
+		printf("Ssend: %f\n", abs(t));
+	}
 
-	start = std::chrono::system_clock::now();
-	if (rank = 0) {
+	start = MPI_Wtime();
+	if (rank == 0) {
 		int buf[N];
-		for (int i = 1; i < N; i++) {
-			MPI_Recv(buf, N, MPI_INT, i, 0, MPI_COMM_WORLD, &status);
-		}
+		MPI_Recv(&buf, N, MPI_INT, 1, 0, MPI_COMM_WORLD, &status);
 	}
 	else {
-		MPI_Bsend(arr, N, MPI_INT, 0, 0, MPI_COMM_WORLD);
+		MPI_Buffer_attach(malloc(N * 8), N * 8);
+		MPI_Bsend(&arr, N, MPI_INT, 0, 0, MPI_COMM_WORLD);
 	}
-	end = std::chrono::system_clock::now();
-	t = std::chrono::duration_cast<std::chrono::milliseconds>(start - end).count();
-	printf("Bsend: %d", t);
+	end = MPI_Wtime();
+	if (rank == 0) {
+		t = end - start;
+		printf("Bsend: %f\n", abs(t));
+	}
 
-	start = std::chrono::system_clock::now();
-	if (rank = 0) {
+	start = MPI_Wtime();
+	if (rank == 0) {
 		int buf[N];
-		for (int i = 1; i < N; i++) {
-			MPI_Recv(buf, N, MPI_INT, i, 0, MPI_COMM_WORLD, &status);
-		}
+		MPI_Recv(&buf, N, MPI_INT, 1, 0, MPI_COMM_WORLD, &status);
 	}
 	else {
-		MPI_Rsend(arr, N, MPI_INT, 0, 0, MPI_COMM_WORLD);
+		MPI_Rsend(&arr, N, MPI_INT, 0, 0, MPI_COMM_WORLD);
 	}
-	end = std::chrono::system_clock::now();
-	t = std::chrono::duration_cast<std::chrono::milliseconds>(start - end).count();
-	printf("Rsend: %d", t);
+	end = MPI_Wtime();
+	t = end - start;
+	if (rank == 0) {
+		printf("Rsend: %f\n", abs(t));
+	}
 
 	MPI_Finalize();
 }

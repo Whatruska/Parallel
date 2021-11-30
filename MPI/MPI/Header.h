@@ -10,3 +10,6 @@ void seventh_task();
 void eighth_task();
 void ninth_task();
 void tenth_task();
+void eleventh_task();
+void twelveth_task();
+void fifteenth_task();

@@ -27,9 +27,6 @@ void fifth_task() {
         }
     }
 
-    MPI_Bcast(a, N, MPI_INT, 0, MPI_COMM_WORLD);
-    MPI_Bcast(b, N, MPI_INT, 0, MPI_COMM_WORLD);
-
     int* len = new int[size];
     int* ind = new int[size];
     int rest = N;

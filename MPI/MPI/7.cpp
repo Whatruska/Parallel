@@ -8,6 +8,7 @@ const int MAX_VAL = 100;
 
 void seventh_task() {
 	int matrix[N][M];
+	int transp_matrix[M][N];
 	int vector[M];
 
 	srand(time(NULL));
@@ -26,6 +27,12 @@ void seventh_task() {
 			}
 		}
 
+		for (int i = 0; i < N; i++) {
+			for (int j = 0; j < M; j++) {
+				transp_matrix[j][i] = matrix[i][j];
+			}
+		}
+
 		for (int i = 0; i < M; i++) {
 			vector[i] = rand() % MAX_VAL;
 		}
@@ -34,7 +41,7 @@ void seventh_task() {
 	int result[N];
 
 	MPI_Bcast(vector, M, MPI_INT, 0, MPI_COMM_WORLD);
-	MPI_Bcast(matrix, N * M, MPI_INT, 0, MPI_COMM_WORLD);
+	MPI_Bcast(transp_matrix, N * M, MPI_INT, 0, MPI_COMM_WORLD);
 
 	int* sendcounts = new int[size];
 	int* displs = new int[size];

@@ -77,7 +77,9 @@ void sixth_task() {
         MPI_Reduce(&minmax, &max, 1, MPI_INT, MPI_MAX, 0, MPI_COMM_WORLD);
         MPI_Reduce(&maxmin, &min, 1, MPI_INT, MPI_MIN, 0, MPI_COMM_WORLD);
 
-        printf("minmax = %d; maxmin = %d", minmax, maxmin);
+        if (rank == 0) {
+            printf("minmax = %d; maxmin = %d", minmax, maxmin);
+        }
 
         MPI_Finalize();
 }
