@@ -131,17 +131,9 @@ void fifteenth_task() {
 		for (int j = 0; j < N; j++) {
 			B_proc_matrix[i][j] = B_proc_matrix[i][j] / coef;
 		}
-		for (int k = i + 1; k < rows_num; k++) {
-			coef = -A_proc_matrix[k][col];
-			for (int j = 0; j < N; j++) {
-				A_proc_matrix[k][j] = A_proc_matrix[k][j] + A_proc_matrix[i][j] * coef;
-			}
-			coef = -B_proc_matrix[k][col];
-			for (int j = 0; j < N; j++) {
-				B_proc_matrix[k][j] = B_proc_matrix[k][j] + B_proc_matrix[i][j] * coef;
-			}
-		}
 	}
+
+	//print_matrix(A_proc_matrix);
 
 	for (int i = 0; i < size; i++) {
 		if (i != rank) {
@@ -154,55 +146,6 @@ void fifteenth_task() {
 	float recv_a[N][N];
 	float recv_b[N][N];
 	int recv_rows_num = 0;
-	for (int proc = 0; proc < size; proc++) {
-		if (proc != rank) {
-			MPI_Recv(&recv_a, N * N, MPI_FLOAT, proc, 0, MPI_COMM_WORLD, &st);
-			MPI_Recv(&recv_b, N * N, MPI_FLOAT, proc, 1, MPI_COMM_WORLD, &st);
-			MPI_Recv(&recv_rows_num, 1, MPI_INT, proc, 2, MPI_COMM_WORLD, &st);
-
-			int* recv_displ_data = displ[proc];
-			for (int i = 0; i < recv_rows_num; i++) {
-				int recv_row_num = recv_displ_data[i];
-				for (int j = 0; j < rows_num; j++) {
-					int row_num = displ_data[j];
-					//if (recv_row_num < row_num) {
-						float coef = -A_proc_matrix[j][recv_row_num];
-						for (int k = 0; k < N; k++) {
-							A_proc_matrix[j][k] = A_proc_matrix[j][k] + coef * recv_a[i][k];
-						}
-						coef = -B_proc_matrix[j][recv_row_num];
-						for (int k = 0; k < N; k++) {
-							B_proc_matrix[j][k] = B_proc_matrix[j][k] + coef * recv_b[i][k];
-						}
-					//}
-				}
-			}
-		}
-	}
-
-	displ_data = displ[rank];
-	for (int i = 0; i < rows_num; i++) {
-		int col = displ_data[i];
-		float coef = A_proc_matrix[i][col];
-		for (int j = 0; j < N; j++) {
-			A_proc_matrix[i][j] = A_proc_matrix[i][j] / coef;
-		}
-		coef = B_proc_matrix[i][col];
-		for (int j = 0; j < N; j++) {
-			B_proc_matrix[i][j] = B_proc_matrix[i][j] / coef;
-		}
-		for (int k = i + 1; k < rows_num; k++) {
-			coef = -A_proc_matrix[k][col];
-			for (int j = 0; j < N; j++) {
-				A_proc_matrix[k][j] = A_proc_matrix[k][j] + A_proc_matrix[i][j] * coef;
-			}
-			coef = -B_proc_matrix[k][col];
-			for (int j = 0; j < N; j++) {
-				B_proc_matrix[k][j] = B_proc_matrix[k][j] + B_proc_matrix[i][j] * coef;
-			}
-		}
-	}
-	
 
 	float result_matrix_a[N][N];
 	float result_matrix_b[N][N];
@@ -237,6 +180,19 @@ void fifteenth_task() {
 	}
 
 	if (rank == 0) {
+		for (int i = 0; i < N; i++) {
+			for (int j = i + 1; j < N; j++) {
+				float coef = -result_matrix_a[j][i] / result_matrix_a[i][i];
+				for (int k = 0; k < N; k++) {
+					result_matrix_a[j][k] = result_matrix_a[j][k] + coef * result_matrix_a[i][k];
+				}
+				coef = -result_matrix_b[j][i] / result_matrix_b[i][i];
+				for (int k = 0; k < N; k++) {
+					result_matrix_b[j][k] = result_matrix_b[j][k] + coef * result_matrix_b[i][k];
+				}
+			}
+		}
+
 		print_matrix(result_matrix_a);
 		print_matrix(result_matrix_b);
 	}
